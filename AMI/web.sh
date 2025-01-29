@@ -33,9 +33,9 @@ source ~/.bash_profile
 #installing self signed certificate for apache
 sudo yum install -y mod_ssl
 
-sudo openssl req -newkey rsa:2048 -nodes -keyout /etc/pki/tls/private/citatech.key -x509 -days 365 -out /etc/pki/tls/certs/citatech.crt \
+sudo openssl req -newkey rsa:2048 -nodes -keyout /etc/pki/tls/private/cdk.key -x509 -days 365 -out /etc/pki/tls/certs/cdk.crt \
 -subj "/C=UK/ST=London/L=London/O=StegHub/OU=DevOps/CN=$(curl -s http://169.254.169.254/latest/meta-data/local-hostname)"
 
-sudo sed -i 's/localhost.crt/citatech.crt/g'  /etc/httpd/conf.d/ssl.conf
+sudo sed -i 's/localhost.crt/cdk.crt/g'  /etc/httpd/conf.d/ssl.conf
 
-sudo sed -i 's/localhost.key/citatech.key/g'  /etc/httpd/conf.d/ssl.conf
+sudo sed -i 's/localhost.key/cdk.key/g'  /etc/httpd/conf.d/ssl.conf

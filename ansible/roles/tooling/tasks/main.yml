@@ -2,17 +2,16 @@
 - name: mounting share(s)
   mount:
     path: /var/www
-    src: fs-06a1f05fa71c21f2c:/
+    src: fs-08abc0dcd3a8f744e:/
     fstype: efs
-    opts: nosuid,noexec,defaults,tls,accesspoint=fsap-0e4fa1fa981c8e0ce
+    opts: nosuid,noexec,defaults,tls,accesspoint=fsap-00c360119678b4107
     state: mounted
 
 - name: install httpd on the webserver
   ansible.builtin.yum:
     enablerepo: "BaseOS,AppStream"
-    name: httpd
+    name: "httpd"
     state: present
-
 
 - name: install mod_ssl on the webserver
   ansible.builtin.yum:
@@ -37,9 +36,9 @@
 
 - name: ensure php-fpm is started and enabled
   ansible.builtin.service:
-     name: php-fpm
-     state: reloaded
-     enabled: yes
+    name: php-fpm
+    state: reloaded
+    enabled: yes
   notify: Restart php-fpm
 
 - import_tasks: setup-site.yml
@@ -48,37 +47,6 @@
 
 - name: ensure httpd is started and enabled
   ansible.builtin.service:
-     name: httpd
-     state: started
-     enabled: yes
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    name: httpd
+    state: started
+    enabled: yes

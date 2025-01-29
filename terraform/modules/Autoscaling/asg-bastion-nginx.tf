@@ -4,13 +4,13 @@ data "aws_availability_zones" "available" {
 }
 
 # creating sns topic for all the auto scaling groups
-resource "aws_sns_topic" "citatech-sns" {
+resource "aws_sns_topic" "cdk-sns" {
   name = "Default_CloudWatch_Alarms_Topic"
 }
 
 
 # creating notification for all the auto scaling groups
-resource "aws_autoscaling_notification" "citatech_notifications" {
+resource "aws_autoscaling_notification" "cdk_notifications" {
   group_names = [
     aws_autoscaling_group.bastion-asg.name,
     aws_autoscaling_group.nginx-asg.name,
@@ -24,7 +24,7 @@ resource "aws_autoscaling_notification" "citatech_notifications" {
     "autoscaling:EC2_INSTANCE_TERMINATE_ERROR",
   ]
 
-  topic_arn = aws_sns_topic.citatech-sns.arn
+  topic_arn = aws_sns_topic.cdk-sns.arn
 }
 
 resource "random_shuffle" "az_list" {
@@ -49,7 +49,7 @@ resource "aws_autoscaling_group" "bastion-asg" {
   }
   tag {
     key                 = "Name"
-    value               = "citatech-bastion"
+    value               = "cdk-bastion"
     propagate_at_launch = true
   }
 
@@ -59,7 +59,7 @@ resource "aws_autoscaling_group" "bastion-asg" {
 
 resource "aws_autoscaling_group" "nginx-asg" {
   name                      = "nginx-asg"
-  max_size                  = 1
+  max_size                  = 2
   min_size                  = 1
   health_check_grace_period = 300
   health_check_type         = "ELB"
@@ -75,7 +75,7 @@ resource "aws_autoscaling_group" "nginx-asg" {
 
   tag {
     key                 = "Name"
-    value               = "citatech-nginx"
+    value               = "cdk-nginx"
     propagate_at_launch = true
   }
 

@@ -12,13 +12,13 @@ keyed_groups:
 
 filters:
   tag:Name:
-    - citatech-bastion
-    - citatech-nginx
-    - citatech-tooling
-    - citatech-wordpress
-    # - citatech-sonarqube
-    # - citatech-artifactory
-    # - citatech-Jenkins
+    - cdk-bastion
+    - cdk-nginx
+    - cdk-tooling
+    - cdk-wordpress
+    # - fnc-sonarqube
+    # - fnc-artifactory
+    # - fnc-Jenkins
   instance-state-name: running
 
 hostnames:

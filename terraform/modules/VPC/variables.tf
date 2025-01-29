@@ -46,9 +46,16 @@ variable "tags" {
 
 variable "name" {
   type    = string
-  default = "citatech"
+  default = "CDK"
 
 }
 variable "environment" {
   default = "true"
 }
+
+
+
+
+
+
+

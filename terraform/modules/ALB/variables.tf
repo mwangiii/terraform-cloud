@@ -3,6 +3,7 @@ variable "public-sg" {
   description = "Security group for external load balancer"
 }
 
+
 # The public subnet froup for external loadbalancer
 variable "public-sbn-1" {
   description = "Public subnets to deploy external ALB"
@@ -11,10 +12,12 @@ variable "public-sbn-2" {
   description = "Public subnets to deploy external  ALB"
 }
 
+
 variable "vpc_id" {
   type        = string
   description = "The vpc ID"
 }
+
 
 variable "private-sg" {
   description = "Security group for Internal Load Balance"
@@ -30,6 +33,7 @@ variable "private-sbn-2" {
 variable "ip_address_type" {
   type        = string
   description = "IP address for the ALB"
+
 }
 
 variable "load_balancer_type" {
@@ -45,7 +49,7 @@ variable "tags" {
 
 
 variable "name" {
-  type        = string
-  description = "name of the loadbalancer"
-
+    type = string
+    description = "name of the loadbalancer"
+  
 }

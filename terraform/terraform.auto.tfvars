@@ -1,15 +1,10 @@
-
 region = "eu-central-1"
 
 vpc_cidr = "172.16.0.0/16"
 
-
 enable_dns_support = "true"
 
-
 enable_dns_hostnames = "true"
-
-
 
 preferred_number_of_public_subnets = 2
 
@@ -17,33 +12,28 @@ preferred_number_of_private_subnets = 4
 
 environment = "dev"
 
-ami-bastion = "ami-0c05e0b2b171bc06f"
+ami-web = "ami-08c595b196bf9f2b2"
 
-ami-nginx = "ami-05f47d34a1904d95e"
+ami-bastion = "ami-011672c55bb538009"
 
-ami-web = "ami-09a5b16ac0a59f541"
+ami-nginx = "ami-0c9c60fd21ccf9a21"
 
-# ami-jenkins = "ami-0c05e0b2b171bc06f"
+ami-sonar = "ami-0e223ce826e5c95bc"
 
-ami-sonar = "ami-08b7c45fdd089df46"
+# ami_jenkins = "ami-088150ee21779bdd5"
 
-# ami-jfrog = "ami-08b7c45fdd089df46"
+# ami_artifactory = "ami-088150ee21779bdd5"
 
-keypair = "terra"
-
-# Ensure to change this to your acccount number
-
-account_no = "010028775188"
-
-
-master-username = "citatech"
-
+keypair = "StegHub"
 
 master-password = "devopspbl"
 
+master-username = "mwangi"
+
+account_no = "905418136617"
 
 tags = {
-  Owner-Email     = "citatech68@gmail.com"
+  Owner-Email     = "mwangi8kevin@gmail.com"
   Managed-By      = "Terraform"
-  Billing-Account = "1234567890"
+  Billing-Account = "905418136617"
 }

@@ -36,13 +36,13 @@ http {
         listen       443 http2 ssl;
         listen       [::]:443 http2 ssl;
         root          /var/www/html;
-        server_name  *.citatech.online;
+        server_name  *.cdk-aws.dns-dynamic.net;
 
 
 
 
-        ssl_certificate /etc/ssl/certs/citatech.crt;
-        ssl_certificate_key /etc/ssl/private/citatech.key;
+        ssl_certificate /etc/ssl/certs/cdk.crt;
+        ssl_certificate_key /etc/ssl/private/cdk.key;
         ssl_dhparam /etc/ssl/certs/dhparam.pem;
 
 
@@ -54,7 +54,7 @@ http {
 
         location / {
             proxy_set_header             Host $host;
-            proxy_pass                   https://internal-ialb-532936862.eu-central-1.elb.amazonaws.com/;
+            proxy_pass                   https://internal-ialb-2046242217.eu-central-1.elb.amazonaws.com/;
            }
     }
 }

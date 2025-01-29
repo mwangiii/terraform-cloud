@@ -1,11 +1,8 @@
  #!/bin/bash
+sudo apt update
 
-export DEBIAN_FRONTEND="noninteractive"
+sudo apt install -y default-jre
 
-sudo apt-get update
+sudo apt install -y default-jdk
 
-sudo DEBIAN_FRONTEND="noninteractive" apt-get install -y default-jre
-
-sudo DEBIAN_FRONTEND="noninteractive" apt-get install -y default-jdk
-
-sudo DEBIAN_FRONTEND="noninteractive" apt-get install -y  git mysql-client wget vim telnet htop python3 chrony net-tools
+sudo apt install -y  git mysql-client wget vim telnet htop python3 chrony net-tools

@@ -1,5 +1,5 @@
 ---
-- hosts: tag_Name_fnc_sonarqube
+- hosts: tag_Name_cdk_sonarqube
   user: ubuntu
   become: true
   roles:

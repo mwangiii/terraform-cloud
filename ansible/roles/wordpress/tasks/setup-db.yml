@@ -12,14 +12,13 @@
 
 - name: create database
   community.mysql.mysql_db:
-    login_host: "citatech-database.cb42aocm8t1r.eu-central-1.rds.amazonaws.com"
-    login_user: "citatech"
+    login_host: "celyne-database.clagwoeu40nj.eu-central-1.rds.amazonaws.com"
+    login_user: "Celyne"
     login_password: "devopspbl"
     name: wordpressdb
     collation: utf8_general_ci
     encoding: utf8
     state: present
-
 
 - name: Input wordpress credentials
   ansible.builtin.replace:
@@ -27,7 +26,10 @@
     regexp: "{{ item.regexp }}"
     replace: "{{ item.line }}"
   loop:
-    - { regexp: '^localhost', line: "citatech-database.cb42aocm8t1r.eu-central-1.rds.amazonaws.com" }
-    - { regexp: '^username_here', line: "citatech" }
-    - { regexp: '^database_name_here', line: "wordpressdb" }
-    - { regexp: '^password_here', line: "devopspbl" }
+    - {
+        regexp: "^localhost",
+        line: "celyne-database.clagwoeu40nj.eu-central-1.rds.amazonaws.com",
+      }
+    - { regexp: "^username_here", line: "Celyne" }
+    - { regexp: "^database_name_here", line: "wordpressdb" }
+    - { regexp: "^password_here", line: "devopspbl" }

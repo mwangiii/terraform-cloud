@@ -17,7 +17,7 @@ sudo mkdir /etc/ssl/private
 
 sudo chmod 700 /etc/ssl/private
 
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/citatech.key -out /etc/ssl/certs/citatech.crt \
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/cdk.key -out /etc/ssl/certs/cdk.crt \
 -subj "/C=UK/ST=London/L=London/O=StegHub/OU=devops/CN=$(curl -s http://169.254.169.254/latest/meta-data/local-hostname)"
 
 sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048

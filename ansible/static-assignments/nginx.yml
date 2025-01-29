@@ -1,5 +1,5 @@
 ---
-- hosts: tag_Name_citatech_nginx
+- hosts: tag_Name_cdk_nginx
   become: true
   roles:
     - nginx

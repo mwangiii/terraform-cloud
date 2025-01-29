@@ -7,7 +7,7 @@ variable "efs-subnet-1" {
 }
 
 variable "efs-sg" {
-  type        = list(any)
+  type        = list
   description = "security group for the file system"
 
 }
@@ -15,7 +15,7 @@ variable "efs-sg" {
 variable "account_no" {
   type        = string
   description = "account number for the aws"
-}
+} 
 
 
 variable "tags" {

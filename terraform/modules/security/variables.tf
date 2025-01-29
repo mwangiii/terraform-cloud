@@ -10,7 +10,7 @@ variable "tags" {
 }
 
 variable "security_groups_detail" {
-  description = "Name and Description of the Security Groups"
+  description = "Description and Name of the Security Groups"
   type        = map(map(string))
   default = {
     name = {

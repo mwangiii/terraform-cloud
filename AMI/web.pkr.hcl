@@ -13,9 +13,6 @@ source "amazon-ebs" "terraform-web-prj-19" {
   ami_name      = "terraform-web-prj-19-${local.timestamp}"
   instance_type = "t2.small"
   region        = var.region
-
-# Specify the subnet_id here
-  subnet_id = "subnet-0a29beb0136924ba0"  # Replace with your actual subnet ID
   
   source_ami_filter {
     filters = {

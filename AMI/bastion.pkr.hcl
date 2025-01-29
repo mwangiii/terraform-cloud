@@ -22,8 +22,6 @@ source "amazon-ebs" "terraform-bastion-prj-19" {
   instance_type = "t2.small"
   region        = var.region
 
-  # Specify the subnet_id here
-  subnet_id = "subnet-0a29beb0136924ba0" 
 
   source_ami_filter {
     filters = {

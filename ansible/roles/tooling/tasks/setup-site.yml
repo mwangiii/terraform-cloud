@@ -1,14 +1,14 @@
 - name: Clone the repository
   ansible.builtin.git:
-   repo: https://github.com/francdomain/tooling.git
-   clone: yes
-   dest: /home/ec2-user/tooling
+    repo: https://github.com/mimi-netizen/tooling.git
+    clone: yes
+    dest: /home/ec2-user/tooling
 
 - name: copy the html from tooling to /var/www/html
   ansible.builtin.copy:
     src: /home/ec2-user/tooling/html/.
     dest: /var/www/html/
-    mode: '0755'
+    mode: "0755"
     remote_src: yes
 
 - name: create healthstatus file
@@ -22,4 +22,3 @@
     ignore_selinux_state: yes
     setype: httpd_sys_content_t
   notify: Restart httpd
-
