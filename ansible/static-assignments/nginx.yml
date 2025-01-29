@@ -1,0 +1,5 @@
+---
+- hosts: tag_Name_citatech_nginx
+  become: true
+  roles:
+    - nginx
