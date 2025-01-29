@@ -1,6 +1,0 @@
----
-- hosts: tag_Name_fnc_sonarqube
-  user: ubuntu
-  become: true
-  roles:
-     - sonarqube

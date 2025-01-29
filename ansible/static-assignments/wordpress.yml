@@ -1,5 +1,0 @@
----
-- hosts: tag_Name_citatech_wordpress
-  become: true
-  roles:
-     - wordpress

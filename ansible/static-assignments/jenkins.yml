@@ -1,5 +1,0 @@
----
-- hosts: tag_Name_fnc_Jenkins
-  become: true
-  roles:
-     - jenkins
