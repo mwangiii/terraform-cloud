@@ -33,7 +33,7 @@ master-username = "mwangiii"
 account_no = "905418136617"
 
 tags = {
-  Owner-Email     = "mwangiiikydd@gmail.com"
+  Owner-Email     = "mwangi8kevin@gmail.com"
   Managed-By      = "Terraform"
   Billing-Account = "905418136617"
 }
